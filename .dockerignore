@@ -1,3 +1,11 @@
+# Ignore node_modules everywhere
+**/node_modules
 node_modules
-dist
+
+# Ignore common development folders and files
+npm-debug.log
 .env
+dist
+.cache
+.vscode
+.DS_Store
