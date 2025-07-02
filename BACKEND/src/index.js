@@ -10,7 +10,7 @@ import rateLimiter from "./middleware/rateLimiter.js";
 dotenv.config();
 
 const app = express();
-const Port = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5001;
 const __dirname = path.resolve();
 
 // middleware
@@ -38,7 +38,7 @@ app.get("*", (req, res) =>{
 
 connectDB().then(()=>{
     
-    app.listen(Port, () =>  console.log(`Server started on port: ${Port}`));
+    app.listen(PORT, () =>  console.log(`Server started on port: ${PORT}`));
 });
 
 
