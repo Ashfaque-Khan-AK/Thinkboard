@@ -21,7 +21,9 @@ if (process.env.NODE_ENV !=="production") {
   
 }
 app.use(express.json()); // this middlware will parse JSON bodies: req.body
-app.use(rateLimiter);
+app.use("/api", rateLimiter);
+
+// app.use(rateLimiter);
 
 
 app.use("/api/notes", notesRoutes);

@@ -7,4 +7,15 @@ const api = axios.create({
     baseURL : BASE_URL,
 })
 
+// Optional: set up a global response interceptor
+api.interceptors.response.use(
+  response => response,
+  error => {
+    if (error.response?.status === 429) {
+      error.isRateLimited = true;
+    }
+    return Promise.reject(error);
+  }
+);
+
 export default api;
